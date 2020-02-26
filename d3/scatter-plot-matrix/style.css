@@ -24,43 +24,47 @@ textarea, svg {
 
 svg {
   /* bl.ocks.org defaults to 960px by 500px */
-  width: 880px;
-  height: 690px;
+  width: 960px;
+  height: 960px;
   background-color: white;
+  font: 10px sans-serif;
+  padding: 10px;
 }
 
-/* svg elements are styled differently from html elements */
-
-rect.bar {
-  stroke: none;
-  fill: #6372e3;
-  width:20px;
+.axis,
+.frame {
+  shape-rendering: crispEdges;
 }
 
-#y-axis text {
-  font-size: 10pt;
-  fill: #888888;
-  transform-origin: 0px 90px;
+.axis line {
+  stroke: #ddd;
 }
 
-#x-axis text {
-  transform: translate(5px, 120px) rotate(90deg);
-  font-size: 10pt;
-  fill: #888888;
+.axis path {
+  display: none;
 }
 
+.cell text {
+  font-weight: bold;
+  text-transform: capitalize;
+  fill: black;
+}
 
-#x-axis line {
-  /* tick marks */
+.frame {
   fill: none;
-  stroke: none;
+  stroke: #aaa;
 }
 
-#x-axis path,
-#y-axis path,
-#y-axis line {
-  fill: none;
+circle {
+  fill-opacity: .7;
+}
 
-  stroke: #bbbbbb;
-  stroke-width: 1px;
+circle.hidden {
+  fill: #ccc !important;
+}
+
+.extent {
+  fill: #000;
+  fill-opacity: .125;
+  stroke: #fff;
 }
