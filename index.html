@@ -61,13 +61,9 @@
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item" href="d3/barchart/">
+              <a class="navbar-item" href="d3/scatter-plot-matrix/">
                 <span class="icon"><i class="fas fa-chart-line"></i></span>
-                <span>Bar Chart</span>
-              </a>
-              <a class="navbar-item">
-                <span class="icon"><i class="fas fa-chart-area"></i></span>
-                <span>Area Chart</span>
+                <span>Scatter Plot Matrix</span>
               </a>
             </div>
           </div>
@@ -95,27 +91,45 @@
     <div class="container">
       <!-- Begin page content -->
       <div class="content">
-
+        <h2> License and Permissioning</h2>
+        <p> From the Opportunity Insights Website: As part of our research studies, we put out publicly available datasets that can be used by other researchers and practitioners to support their own work. These datasets allow you to analyze social mobility and a variety of other outcomes from life expectancy to patent rates by neighborhood, college, parental income level, and racial background. You can search for datasets by geographic level (e.g., Census tracts), by topic (e.g., education), or by the title of the paper. Need technical assistance with these data? Contact us at info@opportunityinsights.org</p>
+        <h2> Data Set Information</h2>
+        <p> The data set is about 2,000 rows and 50 columns in its entirety. We accessed this data on February 21, 2020.<p>
         <h2 id="visualizations">Visualizations</h2>
         <div>
-          <h3>Airlines’ Passenger Count from Asia</h3>
-          <p>This chart shows the passenger count of each of the 21 most popular airlines that fly to Asia.  The height of the bar represents the passenger count, so taller bars represent higher passenger count.  Data was wrangled with Tableau. <br> <br>From the data, it’s clear that United serves the most passengers between Asia and SFO. </p>
-          <p> <a href="d3/barchart/"> See in D3 (Data was wrangled in D3) &raquo; </a></p>
-          <img class="image-mid center" src="./Airlines-Passenger-Count-From-Asia.png" >
-          <br>
-          <h3>SFO Number of Travelers by Region over Time, All flights</h3>
-          <p> This area chart shows the number of passengers served between 2005 and 2009, broken down by geographical region served. The height of the region represents the passenger count for that year, so larger regions indicate more passengers.  Data was wrangled with Tableau.
-            <br> <br>From the data, it’s clear that the U.S. is the most popular region served by SFO, while Asia is the most popular international region served.
-          </p>
-          <img class="image-mid center" src="./Number-of-Travelers-by-Airline.png" >
-          <br>
-          <h3>SFO Number of International Travelers by Region and Airline</h3>
-          <p> This chart shows the passenger count of international flights, broken down further by airline in a stacked bar chart.  The x axis is the geographical region, and the y-axis is passenger count. Each airline has a color, indicated by the color legend.  Data was wrangled with Tableau.
-            <br> <br>From the data, it’s clear that Alaskan Airways only serves international flights to Mexico and Canada.
-          </p>
-          <img class="image-mid center" src="./Number-of-International-Travelers.png" >
+          <h3>Tier 1-6 Universities in California,
+            Median Parent Income,
+            Parents in the Top 1% income level,
+            Parents in Q1 income level,
+            Parents in Q2 income level</h3>
+          <p>This chart shows a scatterplot matrix  measuring top tier (tier 1 through 6) universities in California. The tiers are ranked by competitive, with 1 being the most competitive, and 6 being the least competitive for our analysis. The original dataset had tiers up to 11, with 11 being the least competitive. Each dot on each matrix represents a university.</p>
+          <p>The columns we consider are median parent income, parents in the Top 1% income level, parents in Q1 income level, and parents in Q2 income level. Each individual scatterplot represents one of the columns on the x-axis, and one of the columns on the y-axis. Hence there are 16 total scatterplots in the matrix. </p>
+          <p> As expected, there are consistencies with most of the universities, in that universities with a high median income and high number of parents in the top 1% of income also tend to have a relatively low number of parents in the Q1 and Q2 income brackets. What's more interesting is that high tier public universities in California tend to have a higher income mobility than high tier private universities in California. We can see that many UC and Cal State schools are nearer to the middle in all 4 areas considered, while private universities such as Stanford and Santa Clara University are at the high end in terms of parent median income and parents in the top 1%, but at the very low end in number of parents in the Q1 and Q2 income brackets.
+          <p>We wrangled the data for the Tableu visualization using various filters available through the Tableau Desktop interface.</p>
+          <p> <a href="d3/scatter-plot-matrix/"> View D3 Version (Data was wrangled in Excel) &raquo; </a></p>
+          <img class="image-mid center" src="./hw2_tableau.png" >
           <br>
         </div>
+        <h2 id="grade"> Grade </h2>
+        <table class="table is-hoverable is-bordered grades">
+          <thead>
+            <tr>
+              <th>Letter</th>
+              <th>Done?</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>A</td>
+              <td><i class="has-text-success fas fa-check-circle"></i></td>
+              <td>This grade was achieved because I implemented a scatterplot matrix in Tableau Desktop and D3 version 5.</td>
+            </tr>
+          </tbody>
+
+        </table>
 
 
         <h2 id="about">About</h2>

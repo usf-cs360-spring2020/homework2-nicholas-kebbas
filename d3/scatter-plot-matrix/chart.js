@@ -42,7 +42,7 @@ d3.csv("filtered_data.csv").then(function(data) {
   yAxis.tickSize(-size * n);
 
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("body").append("svg").attr("id", "vis-container")
       .attr("width", size * n + padding)
       .attr("height", size * n + padding)
     .append("g")
@@ -106,14 +106,40 @@ d3.csv("filtered_data.csv").then(function(data) {
         .attr("width", size - padding)
         .attr("height", size - padding);
 
+        var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
 // placing points and adding coloring here
-    cell.selectAll("circle")
+    cell.selectAll("dot")
         .data(data)
       .enter().append("circle")
+      .attr("class", "dot")
         .attr("cx", function(d) { return x(d[p.x]); })
         .attr("cy", function(d) { return y(d[p.y]); })
         .attr("r", 4)
-        .style("fill", function(d) { return color(d); });
+        .on("mouseover", function(d) {
+              div.transition()
+                  .duration(100)
+                  .style("opacity", .9);
+              div	.html(d.name)
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 28) + "px")
+              .transition()
+                .duration(200) // ms
+                .style("opacity", .9) // started as 0!
+        })
+        .on("mouseout", function(d) {
+          div.transition()
+              .duration(100) // ms
+              .style("opacity", 0); // don't care about position!
+        })
+        .style("fill", function(d) { return color(d); })
+
+
+        var tooltip = d3.select("#vis-container").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
   }});
 
 function cross(a, b) {

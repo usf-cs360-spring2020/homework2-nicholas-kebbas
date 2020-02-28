@@ -58,6 +58,9 @@ svg {
 circle {
   fill-opacity: .7;
 }
+.dot {
+    stroke: none;
+}
 
 circle.hidden {
   fill: #ccc !important;
@@ -67,4 +70,13 @@ circle.hidden {
   fill: #000;
   fill-opacity: .125;
   stroke: #fff;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
 }

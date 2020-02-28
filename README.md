@@ -1,6 +1,6 @@
 # README
 
-<https://usf-cs360-spring2020.github.io/homework1-nicholas-kebbas/>
+<https://usf-cs360-spring2020.github.io/homework2-nicholas-kebbas/>
 
 ![Profile Image](profile.png)
 
